@@ -20,6 +20,7 @@
 }
 .app-header-comp {
   font-size: 25px;
+  font-family: Trebuchet MS;
 }
 .pop-corn {
   height: 30px;
@@ -28,6 +29,8 @@
 
 /* Body */
 .body {
+  font-family: Trebuchet MS;
+  color: #44474a;
   margin-top: 100px;
   width: 100%;
   height: 100%;
@@ -48,6 +51,7 @@
   width: 100%;
   justify-content: center;
   background-color: #44474a;
+  font-family: Trebuchet MS;
 }
 .footer-font {
   color: #fecd1a;
@@ -58,7 +62,7 @@
 }
 /* Footer Ends */
 
-/* Search Comp */
+/* Search */
 .search {
   display: flex;
   flex-direction: row;
@@ -76,6 +80,7 @@
   margin-inline: 3px;
   width: 65px;
   background-color: #fecd1a;
+  border-radius: 3px;
 }
 .search-button:hover {
   background-color: #44474a;
@@ -86,10 +91,9 @@
   width: 35%;
   min-width: 170px;
 }
-/* Search Comp Ends */
+/* Search Ends */
 
-/* Alert Comp */
-
+/* Alert */
 .alert {
   text-align: center;
   padding: 0.8rem;
@@ -99,17 +103,61 @@
   color: #333;
   width: 100%;
 }
-
 .alert-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .alert-wrap > div {
-  margin: 6px;
+  margin: 3px;
 }
+/* Alert Ends */
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6px;
+  justify-content: center;
+}
+.grid-item {
+  background-color: #e9c46a;
+  border: 2px solid #44474a;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+@media screen and (min-width: 100px) and (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+/* Grid Ends */
+
+/* Spinner */
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  padding: 10px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Spinner Ends */
 
 .btn-primary,
 .bg-primary,
@@ -172,7 +220,7 @@
   background-color: black;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
-  font-family: "Open Sans Condensed";
+  font-family: Trebuchet MS;
   font-weight: bolder;
   border: none;
   cursor: pointer;
@@ -199,8 +247,10 @@
   }
 }
 
+/* Collection */
+
 .collection-item {
-  width: 16vw;
+  width: 14vw;
   display: flex;
   flex-direction: column;
   height: 250px;
@@ -213,7 +263,7 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
-    border: 1px solid rgb(14, 15, 15);
+    border: 1px solid #44474a;
   }
   .custom-button {
     widows: 50%;
@@ -221,12 +271,7 @@
     position: absolute;
     top: 160px;
     display: none;
-    // @media only screen and (max-width:800px){
-    //   display: block;
-    //   opacity:0.9;
-    //   min-width: unset;
-    //   padding:0 10px
-    // }
+    border-radius: 5px;
   }
   &:hover {
     .image {
@@ -267,6 +312,8 @@
     }
   }
 }
+
+/* Collection Ends */
 
 .movie-item {
   width: 13vw;
@@ -332,8 +379,6 @@
   }
 }
 
-/* Alert Ends */
-
 /* Media 
 @media screen and (min-device-width: 480px) and (max-device-width: 1024px) and (orientation: portrait) and (orientation: landscape) {
   .title {
@@ -361,27 +406,6 @@
   }
 }
 /* Media Ends */
-
-/* Spinner */
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 500px;
-  height: 500px;
-  animation: spin 2s linear infinite;
-  margin: auto;
-  padding: 10px;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /* new css for movie component */
 
@@ -414,27 +438,6 @@ input[type="submit"]:hover {
   display: flex;
   margin: auto;
   justify-content: space-around;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  padding: 10px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  position: relative;
-}
-@media screen and (min-width: 100px) and (max-width: 600px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
@@ -512,21 +515,16 @@ input[type="submit"]:hover {
   border: #ccc solid 1px;
 }
 
-/* Screen larger than 600px? 2 column */
+/* Screen larger than 600px? 2 column 
 @media (min-width: 600px) {
   .grid-template-columns {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-/* Screen larger than 900px? 3 columns */
+/* Screen larger than 900px? 3 columns 
 @media (min-width: 900px) {
   .grid-template-columns {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-/* .App-header h2 {
-  margin: 0;
-} // for Header class name
-*/
+} */
