@@ -82,7 +82,7 @@
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
-.search > input[type="text"] {
+.search > input {
   width: 35%;
   min-width: 170px;
 }
@@ -97,6 +97,18 @@
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  width: 100%;
+}
+
+.alert-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.alert-wrap > div {
+  margin: 6px;
 }
 
 .btn-primary,

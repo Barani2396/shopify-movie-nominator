@@ -31,8 +31,8 @@ const App = ({ searchMovieSuccess }) => {
         <div className="wrapper">
           <Search />
           <p style={{textAlign: "center"}}>Pick 5 movies of your choice</p>
-          <div className="alert-align">
-          <Alert /> 
+          <div className="alert-wrap">
+            <div> <Alert /> </div>
           </div>
           <div className="grid-container">
             <div className={"grid-item"}>
