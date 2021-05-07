@@ -5,7 +5,7 @@ import "../scss/App.scss"
 function Footer() {
     return (
         <div className="footer">
-            <p ><a className="footer-font" target="_blank" href="https://www.linkedin.com/in/baranidharan-pasupathi/">Designed by BP</a></p>
+            <p>Designed by <a className="footer-font footer-rainbow-text" target="_blank" href="https://www.linkedin.com/in/baranidharan-pasupathi/">BP</a></p>
         </div>   
     )
 }

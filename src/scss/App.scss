@@ -49,7 +49,7 @@ html {
   margin: 0;
   width: 100%;
   min-height: max-content;
-  padding: 150px 10px 50px;
+  padding: 115px 10px 75px;
   box-sizing: border-box;
 
   .wrapper {
@@ -57,7 +57,7 @@ html {
   }
 
   @media screen and (min-width: 100px) and (max-width: 600px) {
-    padding: 150px 5px 100px;
+    padding: 115px 5px 100px;
   }
 }
 
@@ -71,12 +71,31 @@ html {
   font-family: Trebuchet MS;
   position: fixed;
   bottom: 0;
+  color: #fecd1a;
   z-index: 3;
+  padding-bottom: 45px;
 }
 
 .footer-font {
-  color: #fecd1a;
   text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-rainbow-text {
+  background-image: linear-gradient(
+    to left,
+    #3ba89f,
+    violet,
+    orange,
+    yellow,
+    #fbf3ca
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+
+  &:hover {
+    color: #fecd1a;
+  }
 }
 
 /* Search */
