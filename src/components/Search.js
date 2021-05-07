@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import { searchMovieSuccess } from "../redux/movie/actions";
 
-import "../App.scss";
+import "../scss/App.scss";
 
 import SearchIcon from "../assets/images/search.svg"
 

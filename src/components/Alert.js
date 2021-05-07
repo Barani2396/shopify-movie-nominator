@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import "../App.scss"
+import "../scss/App.scss"
 
 const Alert = ({ alerts }) =>
   alerts !== null &&

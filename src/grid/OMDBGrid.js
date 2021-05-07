@@ -2,41 +2,42 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import Movie from "../components/Movie";
+import OMDB from "../components/OMDB";
 import Loader from "../components/Loader"
 
-import "./page.scss";
+import "../scss/App.scss";
 
 
 
-const MoviePage = ({
+const OMDBGrid = ({
   movie: { allMovies, errorMessage, loading, nominations },
 }) => {
   return (
-    <div className="movie-page">
+    <div className="omdb-grid">
+      <h6>OMDB List</h6>
       {loading && !errorMessage ? (
         <Loader />
       ) : errorMessage ? (
         <div className="errorMessage">{errorMessage}</div>
       ) : (
-        <div className="items">
+        <div className="omdb-items">
           {allMovies && allMovies.length !== 0
-            ? // finding whther movie is already nominated
+            ?
               allMovies.map((movie) => {
                 const alreadyNominatedMovie = nominations.find(
                   (item) => item.imdbID === movie.imdbID
                 );
                 return (
-                  <Movie
+                  <OMDB
                     key={movie.imdbID}
                     movie={movie}
                     nominated={!!alreadyNominatedMovie}
                   />
                 );
               })
-            : (<div className='no-search-result'>
-              <p> Search something! Try Avengers </p>
-            </div>)}
+            : 
+              <p>Search something! Try Avengers</p>
+            }
         </div>
       )}
     </div>
@@ -47,4 +48,4 @@ const mapStateToProps = (state) => ({
   movie: state.movie,
 });
 
-export default connect(mapStateToProps)(MoviePage);
+export default connect(mapStateToProps)(OMDBGrid);

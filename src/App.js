@@ -5,15 +5,15 @@ import { connect } from "react-redux"
 
 import { searchMovieSuccess } from "./redux/movie/actions"
 
-import NominatedMoviePage from "./pages/NominatedMoviePage"
-import MoviePage from "./pages/MoviePage"
+import NominatedGrid from "./grid/NominatedGrid"
+import MoviePage from "./grid/OMDBGrid"
 
 import Title from "./components/Title"
 import Alert from "./components/Alert"
 import Search from "./components/Search"
 import Footer from "./components/Footer"
 
-import "./App.scss"
+import "./scss/App.scss"
 
 import Popcorn from "./assets/images/popcorn.svg"
 
@@ -24,9 +24,7 @@ const App = ({ searchMovieSuccess }) => {
 
   return (
     <div>
-      <div className="title">
         <Title text={"Movie Nominator"} svgIcon={Popcorn}/>
-      </div>
       <div className="body">
         <div className="wrapper">
           <Search />
@@ -34,20 +32,19 @@ const App = ({ searchMovieSuccess }) => {
           <div className="alert-wrap">
             <div> <Alert /> </div>
           </div>
-          <div className="grid-container">
+          <div className="grid-container grid-wrap">
             <div className={"grid-item"}>
-              <NominatedMoviePage />
+              <NominatedGrid />
             </div>
             <div className={"grid-item"}>
               <MoviePage />
             </div>
           </div>
         </div>
-          <div className="push"></div>
       </div>
-      <div>
+      
         <Footer />
-      </div>
+    
     </div>
   );
 };

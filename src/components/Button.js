@@ -2,9 +2,7 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import "../App.scss";
-
-//commpon button componeny
+import "../scss/App.scss";
 
 const CustomButton = ({
   children,
@@ -13,7 +11,6 @@ const CustomButton = ({
   nominations,
   onClick,
 }) => {
-  //disable inverter will be true when we have already reached the limits of 5 and the incoming movie non nominated
   const disableInverted =
     componentName === "Movie" &&
     nominations.length >= 5 &&
@@ -25,7 +22,7 @@ const CustomButton = ({
       onClick={onClick}
       disabled={disableInverted}
     >
-      {disableInverted ? "Can't Add More" : children}
+      {disableInverted ? "Can't add" : children}
     </button>
   );
 };
